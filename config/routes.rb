@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :records, only: :index
   end
 
+  resources :models, only: :index
+
   namespace :upload do
     get 'file'
     post 'done'

@@ -1,0 +1,33 @@
+<h1>Modelos</h1>
+
+<%= form_tag do %>
+    <table>
+    <tr>
+        <th>Desde</th>
+        <th><%= date_select :date, :from %></th>
+    </tr>
+
+    <tr>
+        <th>Hasta</th>
+        <th><%= date_select :date, :to %></th>
+    </tr>
+    </table>
+
+    <br>
+    <table>
+    <% @models.each do |model| %>
+    <tr>
+        <td>
+        <%= check_box(:selected, model.id) %>
+        <%= label(:selected, model.name) %>
+        </td>
+    </tr>
+    <% end %>
+    </table>
+
+    <br>
+    <%= submit_tag "Aceptar" %>
+<% end %>
+
+<br>
+<%= link_to "Inicio", root_path %>
